@@ -52,6 +52,15 @@
             <version>6.2.6.Final</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>mate.academy</groupId>
+            <artifactId>online-book-store01</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
