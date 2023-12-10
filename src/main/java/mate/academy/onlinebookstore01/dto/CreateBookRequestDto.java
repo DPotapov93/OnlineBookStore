@@ -1,8 +1,7 @@
 package mate.academy.onlinebookstore01.dto;
 
-import lombok.Data;
-
 import java.math.BigDecimal;
+import lombok.Data;
 
 @Data
 public class CreateBookRequestDto {
@@ -10,7 +9,7 @@ public class CreateBookRequestDto {
     private String title;
     private String author;
     private String isbn;
-    BigDecimal price;
-    String description;
-    String coverImage;
+    private BigDecimal price;
+    private String description;
+    private String coverImage;
 }

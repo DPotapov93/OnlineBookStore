@@ -2,7 +2,6 @@ package mate.academy.onlinebookstore01.repository;
 
 import java.util.List;
 import java.util.Optional;
-
 import mate.academy.onlinebookstore01.model.Book;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -55,8 +54,8 @@ public class BookRepositoryImpl implements BookRepository {
     @Override
     public Optional<Book> findById(Long id) {
         try (Session session = sessionFactory.openSession()) {
-           Book book = session.find(Book.class, id);
-           return Optional.ofNullable(book);
+            Book book = session.find(Book.class, id);
+            return Optional.ofNullable(book);
         }
     }
 }
