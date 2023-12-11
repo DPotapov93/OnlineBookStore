@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>mate.academy</groupId>
-    <artifactId>book-shop</artifactId>
+    <artifactId>online-book-store01</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>book-shop</name>
     <description>book-shop</description>
