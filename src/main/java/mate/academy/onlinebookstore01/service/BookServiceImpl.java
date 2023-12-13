@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class BookServiceImpl implements BookService {
+    private static final String FIND_BY_ID_EXCEPTION = "Can`t find book by id: ";
     @Autowired
     private final BookRepository bookRepository;
     @Autowired
@@ -38,6 +39,22 @@ public class BookServiceImpl implements BookService {
     @Override
     public BookDto findById(Long id) {
         return bookMapper.toDto(bookRepository.findById(id).orElseThrow(
-                () -> new EntityNotFoundException("Can`t find book by id: " + id)));
+                () -> new EntityNotFoundException(FIND_BY_ID_EXCEPTION + id)));
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        bookRepository.deleteById(id);
+    }
+
+    @Override
+    public BookDto update(Long id, CreateBookRequestDto createBookRequestDto) {
+        if (bookRepository.existsById(id)) {
+            Book model = bookMapper.toModel(createBookRequestDto);
+            model.setId(id);
+            return bookMapper.toDto(bookRepository.save(model));
+        } else {
+            throw new EntityNotFoundException(FIND_BY_ID_EXCEPTION + id);
+        }
     }
 }
