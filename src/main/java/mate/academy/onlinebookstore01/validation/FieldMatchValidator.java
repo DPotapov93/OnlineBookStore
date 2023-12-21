@@ -2,6 +2,7 @@ package mate.academy.onlinebookstore01.validation;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
+import java.util.Objects;
 import mate.academy.onlinebookstore01.dto.user.UserRegistrationRequestDto;
 
 public class FieldMatchValidator implements
@@ -11,7 +12,7 @@ public class FieldMatchValidator implements
             UserRegistrationRequestDto userRegistrationRequestDto,
             ConstraintValidatorContext constraintValidatorContext
     ) {
-        return userRegistrationRequestDto.getPassword()
-                .equals(userRegistrationRequestDto.getRepeatPassword());
+        return Objects.equals(userRegistrationRequestDto.getPassword(),
+                userRegistrationRequestDto.getRepeatPassword());
     }
 }
