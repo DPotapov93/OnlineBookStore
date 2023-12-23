@@ -1,8 +1,8 @@
 package mate.academy.onlinebookstore01.service;
 
 import java.util.List;
-import mate.academy.onlinebookstore01.dto.BookDto;
-import mate.academy.onlinebookstore01.dto.CreateBookRequestDto;
+import mate.academy.onlinebookstore01.dto.book.BookDto;
+import mate.academy.onlinebookstore01.dto.book.CreateBookRequestDto;
 import org.springframework.data.domain.Pageable;
 
 public interface BookService {

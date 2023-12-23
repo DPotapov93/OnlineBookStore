@@ -1,12 +1,13 @@
-package mate.academy.onlinebookstore01.service;
+package mate.academy.onlinebookstore01.service.impl;
 
 import java.util.List;
-import mate.academy.onlinebookstore01.dto.BookDto;
-import mate.academy.onlinebookstore01.dto.CreateBookRequestDto;
+import mate.academy.onlinebookstore01.dto.book.BookDto;
+import mate.academy.onlinebookstore01.dto.book.CreateBookRequestDto;
 import mate.academy.onlinebookstore01.exception.EntityNotFoundException;
 import mate.academy.onlinebookstore01.mapper.BookMapper;
 import mate.academy.onlinebookstore01.model.Book;
 import mate.academy.onlinebookstore01.repository.BookRepository;
+import mate.academy.onlinebookstore01.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
