@@ -2,6 +2,13 @@ databaseChangeLog:
   - changeSet:
       id: insert-users-roles-table
       author: dmytro
+      preConditions:
+        - sqlCheck:
+            expectedResult: 1
+            sql: SELECT COUNT(*) FROM users WHERE email='admin@example.com'
+        - sqlCheck:
+            expectedResult: 1
+            sql: SELECT COUNT(*) FROM roles WHERE name='ROLE_ADMIN'
       changes:
         - insert:
             tableName: users_roles
