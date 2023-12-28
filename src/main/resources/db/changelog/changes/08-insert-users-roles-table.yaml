@@ -5,10 +5,10 @@ databaseChangeLog:
       preConditions:
         - sqlCheck:
             expectedResult: 1
-            sql: SELECT COUNT(*) FROM users WHERE email='admin@example.com'
+            sql: SELECT COUNT(*) FROM users WHERE email='admin@gmail.com'
         - sqlCheck:
             expectedResult: 1
-            sql: SELECT COUNT(*) FROM roles WHERE name='ROLE_ADMIN'
+            sql: SELECT COUNT(*) FROM roles WHERE name='ADMIN'
       changes:
         - insert:
             tableName: users_roles
