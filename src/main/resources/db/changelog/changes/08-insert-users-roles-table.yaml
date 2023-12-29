@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: insert-users-roles-table
-      author: dmytro
+      author: dmytro_potapov
       preConditions:
         - sqlCheck:
             expectedResult: 1
