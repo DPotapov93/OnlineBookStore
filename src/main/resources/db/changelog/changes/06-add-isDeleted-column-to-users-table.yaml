@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: add-is-deleted-to-users
-      author: dmytro
+      author: dmytro_potapov
       changes:
         - addColumn:
             tableName: users
