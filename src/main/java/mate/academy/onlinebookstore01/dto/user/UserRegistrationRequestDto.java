@@ -7,6 +7,7 @@ import lombok.Data;
 import mate.academy.onlinebookstore01.validation.FieldMatch;
 
 @Data
+@FieldMatch
 public class UserRegistrationRequestDto {
     private static final String EMAIL_EXCEPTION
             = "Cannot be null/empty and must consist symbol: @";
@@ -19,7 +20,6 @@ public class UserRegistrationRequestDto {
     private String email;
     @NotBlank(message = PASSWORD_EXCEPTION)
     @Size(min = 8, max = 16)
-    @FieldMatch
     private String password;
     @NotBlank
     @Size(min = 8, max = 16)

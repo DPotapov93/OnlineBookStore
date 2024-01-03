@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-users-table
+      author: dmytro_potapov
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column: { name: email, value: "admin@gmail.com" }
+              - column: { name: password ,value: "$2a$10$2nh4vqY6sLx1Q2lzASh.iOnII0cUUn3PjLBgtRHfwgVKQ7anFc05W" }
+              - column: { name: first_name, value: "admin" }
+              - column: { name: last_name, value: "adminov" }
+              - column: { name: shipping_address, value: "mokra street" }
+        - insert:
+            tableName: users
+            columns:
+              - column: { name: email, value: "user@gmail.com" }
+              - column: { name: password ,value: "$2a$10$27h8vQHJ7NS/lEKa4aWx5.zUtYAxlTRHO8DiZUHuXdqf4m0dpgWa6" }
+              - column: { name: first_name, value: "user" }
+              - column: { name: last_name, value: "userov" }
+              - column: { name: shipping_address, value: "shevchenko street" }

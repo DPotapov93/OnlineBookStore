@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
 
 @Documented
 @Constraint(validatedBy = FieldMatchValidator.class)
-@Target(ElementType.FIELD)
+@Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface FieldMatch {
     String message() default "Invalid password";
