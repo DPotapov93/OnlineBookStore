@@ -1,29 +1,24 @@
 package mate.academy.onlinebookstore01.service.impl;
 
 import java.util.List;
+import lombok.AllArgsConstructor;
 import mate.academy.onlinebookstore01.dto.book.BookDto;
+import mate.academy.onlinebookstore01.dto.book.BookDtoWithoutCategoryIds;
 import mate.academy.onlinebookstore01.dto.book.CreateBookRequestDto;
 import mate.academy.onlinebookstore01.exception.EntityNotFoundException;
 import mate.academy.onlinebookstore01.mapper.BookMapper;
 import mate.academy.onlinebookstore01.model.Book;
 import mate.academy.onlinebookstore01.repository.BookRepository;
 import mate.academy.onlinebookstore01.service.BookService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
+@AllArgsConstructor
 public class BookServiceImpl implements BookService {
     private static final String FIND_BY_ID_EXCEPTION = "Can`t find book by id: ";
-    @Autowired
     private final BookRepository bookRepository;
-    @Autowired
     private final BookMapper bookMapper;
-
-    public BookServiceImpl(BookRepository bookRepository, BookMapper bookMapper) {
-        this.bookRepository = bookRepository;
-        this.bookMapper = bookMapper;
-    }
 
     @Override
     public BookDto save(CreateBookRequestDto createBookRequestDto) {
@@ -58,5 +53,13 @@ public class BookServiceImpl implements BookService {
         } else {
             throw new EntityNotFoundException(FIND_BY_ID_EXCEPTION + id);
         }
+    }
+
+    @Override
+    public List<BookDtoWithoutCategoryIds> findAllByCategoryId(Long categoryId) {
+        return bookRepository.findAllByCategoryId(categoryId)
+                .stream()
+                .map(bookMapper::toBookDtoWithoutCategoryIds)
+                .toList();
     }
 }
