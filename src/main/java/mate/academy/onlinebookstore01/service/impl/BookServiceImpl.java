@@ -1,7 +1,7 @@
 package mate.academy.onlinebookstore01.service.impl;
 
 import java.util.List;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import mate.academy.onlinebookstore01.dto.book.BookDto;
 import mate.academy.onlinebookstore01.dto.book.BookDtoWithoutCategoryIds;
 import mate.academy.onlinebookstore01.dto.book.CreateBookRequestDto;
@@ -14,7 +14,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class BookServiceImpl implements BookService {
     private static final String FIND_BY_ID_EXCEPTION = "Can`t find book by id: ";
     private final BookRepository bookRepository;
