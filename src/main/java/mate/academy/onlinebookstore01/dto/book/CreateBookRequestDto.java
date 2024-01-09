@@ -6,6 +6,7 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 import java.math.BigDecimal;
+import java.util.Set;
 import lombok.Data;
 
 @Data
@@ -35,4 +36,5 @@ public class CreateBookRequestDto {
     private BigDecimal price;
     private String description;
     private String coverImage;
+    private Set<Long> categoryIds;
 }
