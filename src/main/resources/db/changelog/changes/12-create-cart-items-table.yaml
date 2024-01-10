@@ -18,14 +18,14 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                     references: shopping_carts(id)
-                    foreignKeyName: fk_car_items_shopping_cart_id
+                    foreignKeyName: fk_cart_items_shopping_cart_id
               - column:
                   name: book_id
                   type: bigint
                   constraints:
                     nullable: false
                     references: books(id)
-                    foreignKeyName: fk_car_items_book_id
+                    foreignKeyName: fk_cart_items_book_id
               - column:
                   name: quantity
                   type: integer

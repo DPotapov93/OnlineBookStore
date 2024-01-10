@@ -5,8 +5,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import mate.academy.onlinebookstore01.dto.cart.AddToCartRequestDto;
-import mate.academy.onlinebookstore01.dto.cart.CartItemQuantityRequestDto;
 import mate.academy.onlinebookstore01.dto.cart.ShoppingCartDto;
+import mate.academy.onlinebookstore01.dto.cart.UpdateCartItemRequestDto;
 import mate.academy.onlinebookstore01.model.User;
 import mate.academy.onlinebookstore01.service.ShoppingCartService;
 import org.springframework.http.HttpStatus;
@@ -37,7 +37,6 @@ public class ShoppingCartController {
             @RequestBody @Valid AddToCartRequestDto requestDto,
             Authentication authentication
     ) {
-        authentication.getPrincipal();
         User user = (User) authentication.getPrincipal();
         return shoppingCartService.addToCart(requestDto, user.getId());
     }
@@ -57,7 +56,7 @@ public class ShoppingCartController {
     @Operation(summary = "Update quantity of a books",
             description = "Update quantity of a books in the shopping cart")
     public ShoppingCartDto updateItemsQuantity(
-            @RequestBody @Valid CartItemQuantityRequestDto requestDto,
+            @RequestBody @Valid UpdateCartItemRequestDto requestDto,
             @PathVariable Long cartItemId) {
         return shoppingCartService.updateByCartItemId(cartItemId, requestDto);
     }
