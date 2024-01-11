@@ -28,13 +28,13 @@ public class Order {
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private User user;
-    @Enumerated(EnumType.STRING)
+    @JdbcTypeCode(SqlTypes.VARCHAR)
     private Status status;
-    @CreationTimestamp
+    @Column(nullable = false)
     private BigDecimal total;
-    @Column(nullable = false)
+    @CreationTimestamp
     private LocalDateTime orderDate;
-    @Column(nullable = false)
+    @Column(name = "shipping_address", nullable = false)
     private String shippingAddress;
     @OneToMany(mappedBy = "order")
     @ToString.Exclude
