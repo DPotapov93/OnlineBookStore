@@ -7,7 +7,7 @@ databaseChangeLog:
             tableName: users
             columns:
               - column: { name: email, value: "admin@gmail.com" }
-              - column: { name: password ,value: "$2a$10$2nh4vqY6sLx1Q2lzASh.iOnII0cUUn3PjLBgtRHfwgVKQ7anFc05W" }
+              - column: { name: password ,value: "$2y$05$yAYKK0BJ0RX2oeBN/CqGWuYh9pPdBaB1doou3YfBATYni7gLMvxlW" }
               - column: { name: first_name, value: "admin" }
               - column: { name: last_name, value: "adminov" }
               - column: { name: shipping_address, value: "mokra street" }
