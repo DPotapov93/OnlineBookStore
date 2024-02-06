@@ -35,6 +35,7 @@ public class OrderServiceImpl implements OrderService {
     private static final String ORDER_ID_NOT_FOUND_EXCEPTION = "There is no order by id: ";
     private static final String SHOPPING_CART_NOT_FOUND_EXCEPTION
             = "There is no cart by user id: ";
+
     private final OrderRepository orderRepository;
     private final OrderItemRepository orderItemRepository;
     private final UserRepository userRepository;
