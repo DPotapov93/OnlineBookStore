@@ -15,7 +15,7 @@ databaseChangeLog:
             tableName: users
             columns:
               - column: { name: email, value: "user@gmail.com" }
-              - column: { name: password ,value: "$2a$10$27h8vQHJ7NS/lEKa4aWx5.zUtYAxlTRHO8DiZUHuXdqf4m0dpgWa6" }
+              - column: { name: password ,value: "$2a$12$5aP5XAn.zGkiLRaDU3Jy1uMa23vc2zurRVUKxl6uFzQ4MMSTbQige" }
               - column: { name: first_name, value: "user" }
               - column: { name: last_name, value: "userov" }
               - column: { name: shipping_address, value: "shevchenko street" }
