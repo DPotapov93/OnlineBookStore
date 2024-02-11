@@ -1,5 +1,7 @@
 package mate.academy.onlinebookstore01.service.impl;
 
+import java.util.HashSet;
+import java.util.Set;
 import lombok.RequiredArgsConstructor;
 import mate.academy.onlinebookstore01.dto.user.UserRegistrationRequestDto;
 import mate.academy.onlinebookstore01.dto.user.UserResponseDto;
@@ -13,9 +15,6 @@ import mate.academy.onlinebookstore01.service.UserService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.HashSet;
-import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
