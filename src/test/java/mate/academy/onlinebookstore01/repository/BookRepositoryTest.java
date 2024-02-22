@@ -39,7 +39,7 @@ class BookRepositoryTest {
         expectedBook.setTitle("The Great Gatsby");
         expectedBook.setAuthor("F. Scott Fitzgerald");
         expectedBook.setIsbn("9780743273565");
-        expectedBook.setPrice(BigDecimal.valueOf(11));
+        expectedBook.setPrice(BigDecimal.valueOf(10.99));
         expectedBook.setCategories(categories);
 
         Book actualBook = bookRepository.findById(1L).get();
