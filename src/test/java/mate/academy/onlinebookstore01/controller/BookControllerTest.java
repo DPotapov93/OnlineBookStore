@@ -54,14 +54,14 @@ class BookControllerTest {
                 .setTitle("The Great Gatsby")
                 .setAuthor("F. Scott Fitzgerald")
                 .setIsbn("9780743273565")
-                .setPrice(BigDecimal.valueOf(11));
+                .setPrice(BigDecimal.valueOf(10.99));
 
         BookDto expectedBook = new BookDto()
                 .setId(1L)
                 .setTitle("The Great Gatsby")
                 .setAuthor("F. Scott Fitzgerald")
                 .setIsbn("9780743273565")
-                .setPrice(BigDecimal.valueOf(11));
+                .setPrice(BigDecimal.valueOf(10.99));
 
         String jsonRequest = objectMapper.writeValueAsString(requestDto);
 
